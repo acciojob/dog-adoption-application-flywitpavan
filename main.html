@@ -1,81 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dog Adoption Application</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 20px;
-        }
-        form {
-            background-color: whitesmoke;
-            padding: 5px;
-            border: 1px solid #ccc;
-            width: 300px;
-            margin: 0 auto;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input[type="text"], select {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-        input[type="checkbox"] {
-            margin-right: 5px;
-        }
-        input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dog Adoption Application</title>
+  <!-- Bootstrap CSS link -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f7f7f7;
+      margin-top: 50px;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
 
-    <form action="/submit" method="POST">
-        <h2>Dog Adoption Application</h2>
-        
+  <div class="form-container">
+    <h2>Dog Adoption Application</h2>
+    <form>
+      <!-- Name Field -->
+      <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Name" required>
+        <input type="text" id="name" class="form-control" placeholder="Name" required>
+      </div>
 
+      <!-- Phone Number Field -->
+      <div class="form-group">
         <label for="phone">Phone Number</label>
-        <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
+        <input type="text" id="phone" class="form-control" placeholder="Phone Number" required>
+      </div>
 
+      <!-- Address Field -->
+      <div class="form-group">
         <label for="address">Address</label>
-        <input type="text" id="address" name="address" placeholder="Address" required>
+        <input type="text" id="address" class="form-control" placeholder="Address" required>
+      </div>
 
-        <label>
-            <input type="checkbox" id="checkbox">
-            Have you ever lived with a Dog before?
-        </label>
+      <!-- Lived with a Dog Checkbox -->
+      <div class="form-group form-check">
+        <input type="checkbox" id="checkbox" class="form-check-input">
+        <label for="checkbox" class="form-check-label">Have you ever lived with a Dog before?</label>
+      </div>
 
-       <label for="preferredBreeds">Please select your preferred breeds:</label>
-        <select id="multiSelect" name="preferredBreeds" multiple required>
-            <option value="Labrador">Labrador</option>
-            <option value="German Shepherd">German Shepherd</option>
-            <option value="Golden Retriever">Golden Retriever</option>
-            <option value="Bulldog">Bulldog</option>
-            <option value="Poodle">Poodle</option>
+      <!-- Preferred Breeds Multi-Select -->
+      <div class="form-group">
+        <label for="breeds">Please select your preferred breeds</label>
+        <select id="breeds" class="form-control" multiple required>
+          <option value="labrador">Labrador Retriever</option>
+          <option value="german_shepherd">German Shepherd</option>
+          <option value="golden_retriever">Golden Retriever</option>
+          <option value="beagle">Beagle</option>
+          <option value="bulldog">Bulldog</option>
         </select>
+      </div>
 
-        <input type="submit" value="Submit">
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary btn-block">Submit</button>
     </form>
+  </div>
 
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
